@@ -1,2 +1,3 @@
 module parking {
+	exports parking;
 }

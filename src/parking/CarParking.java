@@ -1,5 +1,6 @@
 package parking;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class CarParking {
 	public static void main(String[] args){  
 
 		Scanner input = new Scanner(System.in);
+		  HashMap<Integer, Car> cars = new HashMap<Integer, Car>();
 		Controller controller=new Controller();
 		System.out.println("Parking area");
 		while(true)
@@ -45,14 +47,15 @@ public class CarParking {
         else if(c==4)
         {
         	System.out.println("Showing all cars in parking");
-        	controller.showDetails();
+        	controller.showDetails(cars);
         	
         }
         else if(c==5)
         {
         	System.out.println("Return Slot num to exit from parking");
+       
          	String slot=input.next();
-           	Map<Integer, Car> slotNo=controller.unParking(slot);  
+           	controller.unParking(slot);  
 
         } 
         else if(c==6)

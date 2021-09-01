@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Controller {
 	
-   Map<Integer,Car> cars=new HashMap<Integer,Car>();
+  Map<Integer,Car> cars=new HashMap<Integer,Car>();
    Integer totalNumberofSlots = 2;
    
   public int parkCar(String color,String regNo)
@@ -32,16 +32,28 @@ public class Controller {
 	   return next;	   
    }
    //loop through map
- public void showDetails()
-   {
-	   for(int i=1;i<=totalNumberofSlots;i++ )
-	   {
-		   if(cars.get(i) != null)
-		   {
-		   System.out.println(cars.get(i).toString());
-		   }		   
-	   }	   
-   }
+// public void showDetails()
+//   {
+//	   for(int i=1;i<=totalNumberofSlots;i++ )
+//	   {
+//		   if(cars.get(i) != null)
+//		   {
+//		   System.out.println(cars.get(i).toString());
+//		   }		   
+//	   }	   
+//   }
+
+ public void showDetails(HashMap<Integer, Car> cars) {
+     if(cars.size() == 0) {
+         System.out.println("\n *********  slots are empty ********* \n");
+         return;
+     }
+     for (Map.Entry<Integer,Car> entry : cars.entrySet()) {
+         System.out.println("\n **** car details slot :" + entry.getKey());
+         System.out.println("car registration number: " + entry.getValue().getRegistrationNumbers());
+         System.out.println("car color: " + entry.getValue().getCarColors());
+     }
+ }
   
 Map<Integer, Car> unParking(String slot) 
 {

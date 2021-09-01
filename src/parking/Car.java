@@ -31,9 +31,9 @@ public class Car {
  public void setRegistrationNumer(String registrationNum) {
    	 this.registrationNum = registrationNum;
    }
-@Override
-public String toString() {
-	return "Car [slotNum=" + slotNum + ", carColor=" + carColor + ", registrationNum=" + registrationNum + "]";
-}
+//@Override
+//public String toString() {
+//	return "Car [slotNum=" + slotNum + ", carColor=" + carColor + ", registrationNum=" + registrationNum + "]";
+//}
 
 }
